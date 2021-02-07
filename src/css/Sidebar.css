@@ -1,0 +1,9 @@
+.sidebar {
+  width: 15%;
+  min-width: 200px;
+  margin-right: 5px;
+}
+
+hr {
+  background-color: rgb(197, 197, 197);
+}
