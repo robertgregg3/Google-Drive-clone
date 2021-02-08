@@ -5,10 +5,20 @@
 }
 
 hr {
-  background-color: rgb(197, 197, 197);
+  color: rgba(221, 220, 220, 0.5);
 }
 
-.sidebar__itemsContainer > .sidebarItem {
+.sidebar__itemsContainer--top > .sidebarItem,
+.sidebar__itemsContainer--bottom > .sidebarItem {
   color: #33333395;
   font-weight: 600;
+}
+
+.sidebar__itemsContainer--top {
+  border-bottom: 1px solid #cccccc;
+  padding-bottom: 10px;
+}
+
+.sidebar__itemsContainer--bottom {
+  padding-top: 10px;
 }

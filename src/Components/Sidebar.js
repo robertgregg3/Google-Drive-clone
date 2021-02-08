@@ -16,14 +16,15 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       <NewFile />
-      <div className="sidebar__itemsContainer">
+      <div className="sidebar__itemsContainer--top">
         <SidebarItem arrow icon={<InsertDriveFile />} label={"My Drive"} />
         <SidebarItem arrow icon={<ImportantDevices />} label={"Computers"} />
         <SidebarItem icon={<PeopleAlt />} label={"Shared with me"} />
         <SidebarItem icon={<QueryBuilder />} label={"Recent"} />
         <SidebarItem icon={<StarBorder />} label={"Starred"} />
         <SidebarItem icon={<DeleteOutline />} label={"Bin"} />
-        <hr />
+      </div>
+      <div className="sidebar__itemsContainer--bottom">
         <SidebarItem icon={<Storage />} label={"Storage"} />
       </div>
     </div>
