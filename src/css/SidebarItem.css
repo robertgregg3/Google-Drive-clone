@@ -19,4 +19,7 @@
 
 .sidebarItem__main > p {
   margin-left: 12px;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: -0.2px;
 }

@@ -7,3 +7,8 @@
 hr {
   background-color: rgb(197, 197, 197);
 }
+
+.sidebar__itemsContainer > .sidebarItem {
+  color: #33333395;
+  font-weight: 600;
+}
