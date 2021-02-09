@@ -1,22 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { db } from "../firebase";
+import FileItem from "./FileItem";
+import "../css/FilesView.css";
 
 const FilesView = () => {
   const [files, setFiles] = useState([]);
 
-  useEffect(
-    () => [
-      db.collection("myFiles").onSnapshot((snapshot) => {
-        setFiles(
-          snapshop.docs.map((doc) => ({
-            id: doc.id,
-            item: doc.data(),
-          }))
-        );
-      }),
-    ],
-    []
-  );
+  useEffect(() => {
+    db.collection("myFiles").onSnapshot((snapshot) => {
+      console.log(files);
+      setFiles(
+        snapshot.docs.map((doc) => ({
+          id: doc.id,
+          item: doc.data(),
+        }))
+      );
+    });
+  }, []);
 
   return (
     <div className="fileView">
@@ -30,6 +30,15 @@ const FilesView = () => {
           <p>File Size</p>
         </div>
       </div>
+      {files.map((file) => (
+        <FileItem
+          id={file.item.id}
+          caption={file.item.caption}
+          timestamp={file.item.timestamp}
+          fileUrl={file.item.fileUrl}
+          size={file.item.size}
+        />
+      ))}
     </div>
   );
 };

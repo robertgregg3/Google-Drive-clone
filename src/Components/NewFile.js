@@ -49,6 +49,7 @@ const NewFile = () => {
 
   const handleUpload = () => {
     setUploading(true);
+
     storage
       .ref(`files/${file.name}`)
       .put(file)
@@ -61,10 +62,10 @@ const NewFile = () => {
           .getDownloadURL()
           .then((url) => {
             db.collection("myFiles").add({
-              timestamp: firebase.firestore.FieldValue.serverTimestamp(),
               caption: file.name,
-              fileUrl: URL,
+              fileUrl: url,
               size: snapshot._delegate.bytesTransferred,
+              timestamp: firebase.firestore.FieldValue.serverTimestamp(),
             });
 
             setUploading(false);
@@ -77,9 +78,10 @@ const NewFile = () => {
   return (
     <div className="newFile">
       <div className="newFile__container" onClick={handleOpen}>
-        <Add />
+        <Add fontSize="large" />
         <p>New</p>
       </div>
+
       <Modal
         open={open}
         onClose={handleClose}

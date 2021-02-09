@@ -1,6 +1,5 @@
 import { InsertDriveFile } from "@material-ui/icons";
 import React from "react";
-import InsertDriveFile from "@material-ui/icons/InsertDriveFile";
 import "../css/FileItem.css";
 
 const monthNames = [
@@ -10,9 +9,9 @@ const monthNames = [
   "Apr",
   "May",
   "Jun",
-  "July",
+  "Jul",
   "Aug",
-  "Sept",
+  "Sep",
   "Oct",
   "Nov",
   "Dec",
@@ -20,12 +19,12 @@ const monthNames = [
 
 const FileItem = ({ id, caption, timestamp, fileUrl, size }) => {
   const fileDate = `${timestamp?.toDate().getDate()} ${
-    monthNames[(timestamp?.toDate().getMonth() = 1)]
+    monthNames[timestamp?.toDate().getMonth() + 1]
   } ${timestamp?.toDate().getFullYear()}`;
 
   const getReadableFileSizeString = (fileSizeInBytes) => {
     let i = -1;
-    const byteUnits = ["KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"];
+    const byteUnits = [" kB", " MB", " GB", " TB", "PB", "EB", "ZB", "YB"];
     do {
       fileSizeInBytes = fileSizeInBytes / 1024;
       i++;
