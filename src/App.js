@@ -8,7 +8,8 @@ import "./css/App.css";
 import { auth, provider } from "./firebase";
 
 function App() {
-  const [user, setUser] = useState(null);
+  // const [user, setUser] = useState()
+  const [user, setUser] = useState({});
 
   const handleLogin = () => {
     if (!user) {
